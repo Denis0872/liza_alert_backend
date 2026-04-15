@@ -1,0 +1,23 @@
+{
+  "changeSet": "vps-nginx-rate-limit",
+  "status": "validated",
+  "server": {
+    "host": "185.21.8.116",
+    "port": 2222,
+    "domain": "lizaalertspb.ru"
+  },
+  "limits": {
+    "requestRate": "5r/s",
+    "burst": 20,
+    "maxConnectionsPerIp": 20
+  },
+  "validation": {
+    "httpsStatus": 200,
+    "repeatedRequests": [200, 200, 200, 200, 200]
+  },
+  "commands": [
+    "nginx -t",
+    "curl -I https://lizaalertspb.ru",
+    "for i in 1 2 3 4 5; do curl -sk -o /dev/null -w '%{http_code} ' https://lizaalertspb.ru/api/v1/lost-cases; done"
+  ]
+}
