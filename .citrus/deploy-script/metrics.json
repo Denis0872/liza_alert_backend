@@ -1,0 +1,15 @@
+{
+  "changeSet": "deploy-script",
+  "status": "validated",
+  "script": "scripts/deploy.sh",
+  "flow": [
+    "git pull --ff-only",
+    "mvn -q -DskipTests package",
+    "sudo systemctl restart liza-alert.service",
+    "curl -sk https://lizaalertspb.ru/api/v1/lost-cases"
+  ],
+  "commands": [
+    "bash -n scripts/deploy.sh",
+    "./mvnw.cmd test"
+  ]
+}

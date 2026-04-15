@@ -1,0 +1,15 @@
+{
+  "changeSet": "vps-secrets-without-vault",
+  "status": "validated",
+  "secretsModel": {
+    "rootOnlyEnvFile": "/etc/liza-alert/liza-alert.env",
+    "repoTemplate": ".env.example",
+    "helperScript": "scripts/vps-secrets.sh",
+    "deployScript": "scripts/deploy.sh"
+  },
+  "commands": [
+    "bash -n scripts/deploy.sh",
+    "bash -n scripts/vps-secrets.sh",
+    "./mvnw.cmd test"
+  ]
+}

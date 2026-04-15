@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Runtime secrets and logs ###
+.env
+app.log
+app.pid
