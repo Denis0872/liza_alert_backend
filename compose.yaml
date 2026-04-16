@@ -20,3 +20,4 @@ services:
 
 volumes:
   liza-alert-backend-postgres-data:
+    name: liza-alert-postgres-data
