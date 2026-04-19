@@ -8,13 +8,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "media_asset")
 public class MediaAsset extends AuditableEntity {
@@ -35,5 +29,48 @@ public class MediaAsset extends AuditableEntity {
 
     @Column(name = "sort_order", nullable = false)
     private Integer sortOrder = 0;
+
+    public MediaAsset() {
+    }
+
+    public LostCase getLostCase() {
+        return lostCase;
+    }
+
+    public void setLostCase(LostCase lostCase) {
+        this.lostCase = lostCase;
+    }
+
+    public MediaType getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(MediaType mediaType) {
+        this.mediaType = mediaType;
+    }
+
+    public String getExternalUrl() {
+        return externalUrl;
+    }
+
+    public void setExternalUrl(String externalUrl) {
+        this.externalUrl = externalUrl;
+    }
+
+    public String getCaption() {
+        return caption;
+    }
+
+    public void setCaption(String caption) {
+        this.caption = caption;
+    }
+
+    public Integer getSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
+    }
 }
 

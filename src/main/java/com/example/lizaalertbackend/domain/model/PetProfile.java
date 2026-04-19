@@ -8,13 +8,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "pet_profile")
 public class PetProfile extends AuditableEntity {
@@ -60,5 +54,112 @@ public class PetProfile extends AuditableEntity {
 
     @Column(name = "behavior_notes", length = 2000)
     private String behaviorNotes;
+
+    public PetProfile() {
+    }
+
+    public UserAccount getOwner() {
+        return owner;
+    }
+
+    public void setOwner(UserAccount owner) {
+        this.owner = owner;
+    }
+
+    public PetSpecies getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(PetSpecies species) {
+        this.species = species;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public PetSex getSex() {
+        return sex;
+    }
+
+    public void setSex(PetSex sex) {
+        this.sex = sex;
+    }
+
+    public Integer getAgeYears() {
+        return ageYears;
+    }
+
+    public void setAgeYears(Integer ageYears) {
+        this.ageYears = ageYears;
+    }
+
+    public String getSizeLabel() {
+        return sizeLabel;
+    }
+
+    public void setSizeLabel(String sizeLabel) {
+        this.sizeLabel = sizeLabel;
+    }
+
+    public String getPrimaryColor() {
+        return primaryColor;
+    }
+
+    public void setPrimaryColor(String primaryColor) {
+        this.primaryColor = primaryColor;
+    }
+
+    public String getSecondaryColor() {
+        return secondaryColor;
+    }
+
+    public void setSecondaryColor(String secondaryColor) {
+        this.secondaryColor = secondaryColor;
+    }
+
+    public String getSpecialMarks() {
+        return specialMarks;
+    }
+
+    public void setSpecialMarks(String specialMarks) {
+        this.specialMarks = specialMarks;
+    }
+
+    public String getMicrochipId() {
+        return microchipId;
+    }
+
+    public void setMicrochipId(String microchipId) {
+        this.microchipId = microchipId;
+    }
+
+    public String getCollarDetails() {
+        return collarDetails;
+    }
+
+    public void setCollarDetails(String collarDetails) {
+        this.collarDetails = collarDetails;
+    }
+
+    public String getBehaviorNotes() {
+        return behaviorNotes;
+    }
+
+    public void setBehaviorNotes(String behaviorNotes) {
+        this.behaviorNotes = behaviorNotes;
+    }
 }
 

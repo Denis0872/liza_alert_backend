@@ -12,13 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.Instant;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "lost_case")
 public class LostCase extends AuditableEntity {
@@ -60,5 +54,80 @@ public class LostCase extends AuditableEntity {
 
     @Column(name = "urgent", nullable = false)
     private boolean urgent;
+
+    public LostCase() {
+    }
+
+    public PetProfile getPetProfile() {
+        return petProfile;
+    }
+
+    public void setPetProfile(PetProfile petProfile) {
+        this.petProfile = petProfile;
+    }
+
+    public UserAccount getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(UserAccount createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public CaseStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(CaseStatus status) {
+        this.status = status;
+    }
+
+    public Instant getLostAt() {
+        return lostAt;
+    }
+
+    public void setLostAt(Instant lostAt) {
+        this.lostAt = lostAt;
+    }
+
+    public SearchLocation getLastSeenLocation() {
+        return lastSeenLocation;
+    }
+
+    public void setLastSeenLocation(SearchLocation lastSeenLocation) {
+        this.lastSeenLocation = lastSeenLocation;
+    }
+
+    public String getCircumstances() {
+        return circumstances;
+    }
+
+    public void setCircumstances(String circumstances) {
+        this.circumstances = circumstances;
+    }
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
+
+    public String getRewardDetails() {
+        return rewardDetails;
+    }
+
+    public void setRewardDetails(String rewardDetails) {
+        this.rewardDetails = rewardDetails;
+    }
+
+    public boolean isUrgent() {
+        return urgent;
+    }
+
+    public void setUrgent(boolean urgent) {
+        this.urgent = urgent;
+    }
 }
 

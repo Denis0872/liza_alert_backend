@@ -5,13 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "user_account")
 public class UserAccount extends AuditableEntity {
@@ -31,5 +25,48 @@ public class UserAccount extends AuditableEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 40)
     private UserRole role;
+
+    public UserAccount() {
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getTelegramHandle() {
+        return telegramHandle;
+    }
+
+    public void setTelegramHandle(String telegramHandle) {
+        this.telegramHandle = telegramHandle;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
 }
 

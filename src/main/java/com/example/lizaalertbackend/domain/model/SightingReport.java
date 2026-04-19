@@ -12,13 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.Instant;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "sighting_report")
 public class SightingReport extends AuditableEntity {
@@ -56,5 +50,72 @@ public class SightingReport extends AuditableEntity {
 
     @Column(name = "notes", nullable = false, length = 2000)
     private String notes;
+
+    public SightingReport() {
+    }
+
+    public LostCase getLostCase() {
+        return lostCase;
+    }
+
+    public void setLostCase(LostCase lostCase) {
+        this.lostCase = lostCase;
+    }
+
+    public String getReporterName() {
+        return reporterName;
+    }
+
+    public void setReporterName(String reporterName) {
+        this.reporterName = reporterName;
+    }
+
+    public String getReporterPhone() {
+        return reporterPhone;
+    }
+
+    public void setReporterPhone(String reporterPhone) {
+        this.reporterPhone = reporterPhone;
+    }
+
+    public Instant getSeenAt() {
+        return seenAt;
+    }
+
+    public void setSeenAt(Instant seenAt) {
+        this.seenAt = seenAt;
+    }
+
+    public ReportStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ReportStatus status) {
+        this.status = status;
+    }
+
+    public Integer getConfidenceScore() {
+        return confidenceScore;
+    }
+
+    public void setConfidenceScore(Integer confidenceScore) {
+        this.confidenceScore = confidenceScore;
+    }
+
+    public SearchLocation getLocation() {
+        return location;
+    }
+
+    public void setLocation(SearchLocation location) {
+        this.location = location;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 }
 
